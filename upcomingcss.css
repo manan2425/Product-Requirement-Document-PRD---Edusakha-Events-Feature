@@ -1,0 +1,19 @@
+body {
+    font-family: Arial, sans-serif;
+   
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  h1 {
+  
+    align-items: center;
+  }
+  
+  .events-container {
+    width: 100%;
+   display: block;
+   margin: auto;
+  }
+  

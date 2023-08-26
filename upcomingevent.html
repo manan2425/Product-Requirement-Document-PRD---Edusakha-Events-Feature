@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Upcoming Events</title>
+  <link rel="stylesheet" type="text/css" href="upcomingcss.css">
+</head>
+<body>
+  <div class="box">
+  <h1>Upcoming Events</h1>
+  <div class="events-container" id="eventsContainer">
+    <!-- Events will be dynamically added here -->
+  </div>
+</div>
+<script>
+  const eventsContainer = document.getElementById('eventsContainer');
+
+// Example data of upcoming events
+const upcomingEvents = [
+  { title: 'Conference 2023', date: '2023-09-15' },
+  { title: 'Workshop Series', date: '2023-10-10' },
+  { title: 'Hackathon', date: '2023-11-20' }
+];
+
+// Function to format the date in a user-friendly way
+function formatDate(dateString) {
+  const options = { year: 'numeric', month: 'long', day: 'numeric' };
+  return new Date(dateString).toLocaleDateString(undefined, options);
+}
+
+// Render the upcoming events
+function renderEvents() {
+  upcomingEvents.forEach(event => {
+    const eventCard = document.createElement('div');
+    eventCard.className = 'event-card';
+    eventCard.innerHTML = `
+      <h2>${event.title}</h2>
+      <p>Date: ${formatDate(event.date)}</p>
+    `;
+    eventsContainer.appendChild(eventCard);
+  });
+}
+
+// Call the renderEvents function to display the events
+renderEvents();
+
+</script>
+</body>
+
+</html>
